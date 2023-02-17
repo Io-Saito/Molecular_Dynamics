@@ -22,7 +22,7 @@ class System:
     def __kinetic_energy(self):
         self.K = 0
         for x in self.Atoms:
-            self.K = self.K+np.sum(x.vel**2)*x.M/2
+            self.K = self.K+np.sum(x.vel**2)/2
         return self.K/len(self.Atoms)
 
     def __potential_energy(self):
@@ -32,7 +32,7 @@ class System:
                 if i == j:
                     pass
                 elif i < j:
-                    dp = self.__adjustCell(x.pos-y.pos)
+                    dp = self.__adjustCell(y.pos-x.pos)
                     r2 = np.sum((dp)**2)
                     if r2 < self.cutoff**2:
                         self.P = self.P + \
@@ -61,8 +61,8 @@ class System:
                     dp = self.__adjustCell(y.pos-x.pos)
                     r2 = np.sum((dp)**2)
                     if r2 < self.cutoff**2:
-                        x.vel = x.vel + self.pot.force(r2)*dp*self.dt
-                        y.vel = y.vel - self.pot.force(r2)*dp*self.dt
+                        x.vel = x.vel + (self.pot.force(r2)*dp*self.dt)
+                        y.vel = y.vel - (self.pot.force(r2)*dp*self.dt)
                     else:
                         pass
                 else:

@@ -21,11 +21,11 @@ class Atom:
             [np.sin(theta)*np.cos(phi), np.sin(theta)*np.sin(phi), np.cos(theta)])*r
 
     def move(self, dt):
-        self.pos = self.pos+self.vel/2*dt
+        self.pos = self.pos+(self.vel/2*dt)
 
     def periodic(self, cellsize):
         for i in range(0, 3):
             if self.pos[i] > cellsize/2:
-                self.pos[i] -= cellsize/2
+                self.pos[i] -= cellsize
             if self.pos[i] < -cellsize/2:
-                self.pos[i] += cellsize/2
+                self.pos[i] += cellsize

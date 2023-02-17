@@ -8,9 +8,9 @@ import pandas as pd
 
 BuilderParameter = {
     "Weight": 1.0,
-    "x_num": 4,
-    "y_num": 4,
-    "z_num": 4,
+    "x_num": 3,
+    "y_num": 3,
+    "z_num": 3,
     "a": 2,
     "type": "FCC"
 }
@@ -24,9 +24,9 @@ myatoms = Builder.BuildAtomList(BuilderParameter)
 L_J = LJ(1, 1)
 MDParameter = {
     "Temperature": 120,
-    "CellSize": 8,
+    "CellSize": 6.1,
     "Cutoff": 2,
-    "Iteration": 5000,
+    "Iteration": 10000,
     "Dt": 0.01,
     "Potential": L_J,
     "Atomlist": myatoms
@@ -41,9 +41,9 @@ atom_df = MD_.traj.atom_traj
 PlottingParameter = {
     "df": df,
     "atom_df": atom_df,
-    "timestep": 5000,
+    "timestep": 10000,
     "AtomList": myatoms,
-    "name": "27Atoms_BCC_Normalized_11"
+    "name": "64Atoms_Primitive_Normalized_12"
 }
 
 

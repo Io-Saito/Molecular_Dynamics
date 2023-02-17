@@ -25,5 +25,5 @@ class LJ(Potential):
         return pot
 
     def force(self, r2) -> np.array:
-        dvdr = (24*r2**3-48)/(r2**7)
+        dvdr = (24*(r2**3)-48)/(r2**7)
         return dvdr
