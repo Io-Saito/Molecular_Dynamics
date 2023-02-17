@@ -8,9 +8,9 @@ import pandas as pd
 
 BuilderParameter = {
     "Weight": 1.0,
-    "x_num": 3,
-    "y_num": 3,
-    "z_num": 3,
+    "x_num": 4,
+    "y_num": 4,
+    "z_num": 4,
     "a": 2,
     "type": "FCC"
 }
@@ -24,7 +24,7 @@ myatoms = Builder.BuildAtomList(BuilderParameter)
 L_J = LJ(1, 1)
 MDParameter = {
     "Temperature": 120,
-    "CellSize": 6.1,
+    "CellSize": 8.1,
     "Cutoff": 2,
     "Iteration": 10000,
     "Dt": 0.01,

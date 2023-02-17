@@ -1,5 +1,7 @@
 # Molecular Dynamics from scratch
 
+![GIf](Step4/data/64Atoms_Primitive_Normalized_12.gif)
+
 ## Step1
 * Design architecture
 * Lennerd-Jhones potential
