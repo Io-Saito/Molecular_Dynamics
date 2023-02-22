@@ -16,16 +16,16 @@ def Plot(params):
     fig_2 = px.line(
         data_frame=df,
         x="timestep",
-        y="value",
-        color='EKP',
+        y="Energy",
+        color='Energy Profile',
         color_discrete_sequence=px.colors.qualitative.Plotly)
 
     fig_1 = px.scatter_3d(
         data_frame=atom_df,
-        x="p_x",
-        y="p_y",
-        z="p_z",
-        color='v',
+        x="X",
+        y="Y",
+        z="Z",
+        color='velocity',
         range_color=[0, 10],
         size_max=10,
         opacity=0.7,
@@ -49,9 +49,10 @@ def Plot(params):
 def savefig(fig, name):
     frames = []
 
-    for fr in tqdm(fig.frames):
+    for s, fr in enumerate(tqdm(fig.frames)):
         # set main traces to appropriate traces within plotly frame
         fig.update(data=fr.data)
+        fig.layout.sliders[0].update(active=s)
     # generate image of current state
         frames.append(PIL.Image.open(io.BytesIO(fig.to_image(format="png"))))
 
