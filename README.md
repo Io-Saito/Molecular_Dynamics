@@ -1,6 +1,7 @@
 # Molecular Dynamics from scratch
 
-![GIf](Step4/data/64Atoms_Primitive_Normalized_12.gif)
+![GIf](Step5/8Atoms_visualize.gif)
+![PNG](Step5/8Atoms_energy.png)
 
 ## Step1
 * Design architecture
@@ -18,3 +19,6 @@
 
 ## Step4
 * Troubleshooting of energy conservation
+
+## Step5
+* Use Plotly
